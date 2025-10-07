@@ -1,4 +1,5 @@
 import { FileText, ListChecks, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // <!-- Sekcja Jak złożyć zamówienie -->
 const OrderStepsSection = () => {
@@ -57,12 +58,12 @@ const OrderStepsSection = () => {
 
         {/* Przycisk wysłania zapytania */}
         <div className="text-center mt-12">
-          <a
-            href="/request"
+          <Link
+            to="/request"
             className="inline-block px-8 py-4 gradient-red text-white font-semibold rounded-lg shadow-glow hover:scale-105 transition-smooth"
           >
             Wyślij zapytanie
-          </a>
+          </Link>
         </div>
       </div>
     </section>
