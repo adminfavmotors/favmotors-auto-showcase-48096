@@ -31,13 +31,13 @@ const HeroSection = () => {
 
           <div className="flex flex-wrap gap-4">
             <a
-              href="#propozycje"
-              className="px-8 py-4 gradient-red text-white font-semibold rounded-lg shadow-glow hover:scale-105 transition-smooth"
+              href="/#/popular-products"
+              className="px-8 py-4 gradient-primary text-white font-semibold rounded-lg shadow-glow hover:scale-105 transition-smooth"
             >
               Zobacz ofertę
             </a>
             <a
-              href="#kontakt"
+              href="/#/request"
               className="px-8 py-4 bg-secondary text-foreground font-semibold rounded-lg hover:bg-secondary/80 transition-smooth"
             >
               Skontaktuj się
