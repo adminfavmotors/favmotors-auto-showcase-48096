@@ -56,14 +56,14 @@ const OrderStepsSection = () => {
           })}
         </div>
 
-        {/* Przycisk wysłania zapytania */}
+        {/* Przycisk kontaktu */}
         <div className="text-center mt-12">
-          <Link
-            to="/request"
+          <a
+            href="#kontakt"
             className="inline-block px-8 py-4 gradient-red text-white font-semibold rounded-lg shadow-glow hover:scale-105 transition-smooth"
           >
-            Wyślij zapytanie
-          </Link>
+            Skontaktuj się z nami
+          </a>
         </div>
       </div>
     </section>

@@ -16,7 +16,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-3xl">
           {/* EDYTUJ: Tytuł sekcji O nas */}
-          <h2 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h2 className="text-5xl lg:text-7xl font-display font-bold mb-6 leading-tight">
             Profesjonalne części samochodowe
             <span className="text-primary"> w najlepszych cenach</span>
           </h2>
@@ -37,7 +37,7 @@ const HeroSection = () => {
               Zobacz ofertę
             </a>
             <a
-              href="/#/request"
+              href="#kontakt"
               className="px-8 py-4 bg-secondary text-foreground font-semibold rounded-lg hover:bg-secondary/80 transition-smooth"
             >
               Skontaktuj się

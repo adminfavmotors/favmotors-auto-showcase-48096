@@ -5,10 +5,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import CategoryPage from "./pages/CategoryPage";
-import RequestPage from "./pages/RequestPage";
 import PopularProductsPage from "./pages/PopularProductsPage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
 
@@ -17,12 +17,12 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <CookieConsent />
       <HashRouter>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/category/:category" element={<CategoryPage />} />
-          <Route path="/request" element={<RequestPage />} />
           <Route path="/popular-products" element={<PopularProductsPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
