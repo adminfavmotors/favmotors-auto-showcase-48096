@@ -58,12 +58,15 @@ const OrderStepsSection = () => {
 
         {/* Przycisk kontaktu */}
         <div className="text-center mt-12">
-          <a
-            href="#kontakt"
+          <button
+            onClick={() => {
+              const element = document.getElementById('kontakt');
+              element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
             className="inline-block px-8 py-4 gradient-red text-white font-semibold rounded-lg shadow-glow hover:scale-105 transition-smooth"
           >
             Skontaktuj się z nami
-          </a>
+          </button>
         </div>
       </div>
     </section>

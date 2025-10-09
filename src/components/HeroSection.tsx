@@ -36,12 +36,15 @@ const HeroSection = () => {
             >
               Zobacz ofertę
             </a>
-            <a
-              href="#kontakt"
+            <button
+              onClick={() => {
+                const element = document.getElementById('kontakt');
+                element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
               className="px-8 py-4 bg-secondary text-foreground font-semibold rounded-lg hover:bg-secondary/80 transition-smooth"
             >
               Skontaktuj się
-            </a>
+            </button>
           </div>
         </div>
       </div>
