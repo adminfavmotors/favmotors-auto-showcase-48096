@@ -38,9 +38,9 @@ const ProductsSection = () => {
   };
 
   return (
-    <section id="propozycje" className="py-20 gradient-metallic">
+    <section id="propozycje" className="py-20 gradient-dark">
       <div className="container mx-auto px-4 lg:px-8">
-        <h2 className="text-4xl lg:text-5xl font-bold mb-12 text-center">
+        <h2 className="text-4xl lg:text-5xl font-bold mb-12 text-center text-white">
           Nasze <span className="text-primary">propozycje</span>
         </h2>
 

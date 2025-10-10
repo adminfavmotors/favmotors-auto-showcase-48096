@@ -52,9 +52,9 @@ const PromotionsSection = () => {
   }, []);
 
   return (
-    <section id="promocje" className="py-20 gradient-metallic">
+    <section id="promocje" className="py-20 gradient-dark">
       <div className="container mx-auto px-4 lg:px-8">
-        <h2 className="text-4xl lg:text-5xl font-bold mb-12 text-center">
+        <h2 className="text-4xl lg:text-5xl font-bold mb-12 text-center text-white">
           Nasze <span className="text-primary">promocje</span>
         </h2>
 
@@ -72,10 +72,10 @@ const PromotionsSection = () => {
                     alt={promo.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent flex items-end">
+                  <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/70 to-transparent flex items-end">
                     <div className="p-8 lg:p-12">
-                      <h3 className="text-3xl lg:text-4xl font-bold mb-2 group-hover:text-primary transition-smooth">{promo.title}</h3>
-                      <p className="text-xl text-foreground/80">{promo.description}</p>
+                      <h3 className="text-3xl lg:text-4xl font-bold mb-2 text-white group-hover:text-primary transition-smooth">{promo.title}</h3>
+                      <p className="text-xl text-white/90">{promo.description}</p>
                     </div>
                   </div>
                 </div>

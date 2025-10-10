@@ -48,7 +48,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
-        isScrolled ? 'bg-background/95 backdrop-blur-md shadow-elegant' : 'bg-background/80 backdrop-blur-sm'
+        isScrolled ? 'bg-secondary/98 backdrop-blur-md shadow-elegant' : 'bg-secondary/95 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
@@ -56,7 +56,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <h1 className="text-2xl lg:text-3xl font-bold tracking-tight">
-              <span className="text-foreground">FAV</span>
+              <span className="text-white">FAV</span>
               <span className="text-primary">MOTORS</span>
             </h1>
           </Link>
@@ -67,7 +67,7 @@ const Header = () => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-fast relative group"
+                className="text-sm font-medium text-white/90 hover:text-primary transition-fast relative group"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
@@ -78,7 +78,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-foreground hover:text-primary transition-fast"
+            className="lg:hidden p-2 text-white hover:text-primary transition-fast"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -86,12 +86,12 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav className="lg:hidden py-4 border-t border-border bg-background">
+          <nav className="lg:hidden py-4 border-t border-white/20 bg-secondary">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-secondary/50 transition-fast"
+                className="block w-full text-left px-4 py-3 text-sm font-medium text-white/90 hover:text-primary hover:bg-white/10 transition-fast"
               >
                 {item.label}
               </button>

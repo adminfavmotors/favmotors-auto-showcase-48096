@@ -3,17 +3,17 @@ import { MapPin, Phone, Mail, Instagram, Facebook, Package, Truck, Users } from 
 // <!-- Sekcja Kontakt -->
 const ContactSection = () => {
   return (
-    <section id="kontakt" className="py-20 bg-background border-t border-border">
+    <section id="kontakt" className="py-20 bg-secondary border-t border-white/10">
       <div className="container mx-auto px-4 lg:px-8">
         <h2 className="text-4xl lg:text-5xl font-bold mb-12 text-center">
-          <span className="text-primary">Kontakt</span>
+          <span className="text-primary">Kontakt</span> <span className="text-white">z nami</span>
         </h2>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold mb-6">Dane kontaktowe</h3>
+              <h3 className="text-2xl font-bold mb-6 text-white">Dane kontaktowe</h3>
               
               <div className="space-y-4">
                 {/* EDYTUJ: Adres */}
@@ -22,8 +22,8 @@ const ContactSection = () => {
                     <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">Adres</div>
-                    <div className="text-foreground/70">Kraków, Polska</div>
+                    <div className="font-semibold mb-1 text-white">Adres</div>
+                    <div className="text-white/80">Kraków, Polska</div>
                   </div>
                 </div>
 
@@ -33,8 +33,8 @@ const ContactSection = () => {
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">Telefon</div>
-                    <a href="tel:+48123456789" className="text-foreground/70 hover:text-primary transition-fast">
+                    <div className="font-semibold mb-1 text-white">Telefon</div>
+                    <a href="tel:+48123456789" className="text-white/80 hover:text-primary transition-fast">
                       +48 123 456 789
                     </a>
                   </div>
@@ -46,8 +46,8 @@ const ContactSection = () => {
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">E-mail</div>
-                    <a href="mailto:kontakt@favmotors.pl" className="text-foreground/70 hover:text-primary transition-fast">
+                    <div className="font-semibold mb-1 text-white">E-mail</div>
+                    <a href="mailto:kontakt@favmotors.pl" className="text-white/80 hover:text-primary transition-fast">
                       kontakt@favmotors.pl
                     </a>
                   </div>
@@ -57,7 +57,7 @@ const ContactSection = () => {
 
             {/* Social Media */}
             <div>
-              <h3 className="text-xl font-bold mb-4">Znajdź nas w social media</h3>
+              <h3 className="text-xl font-bold mb-4 text-white">Znajdź nas w social media</h3>
               <div className="flex gap-4">
                 {/* EDYTUJ: Link do Instagrama */}
                 <a
@@ -84,36 +84,36 @@ const ContactSection = () => {
 
           {/* Delivery Options */}
           <div>
-            <h3 className="text-2xl font-bold mb-6">Opcje dostawy</h3>
+            <h3 className="text-2xl font-bold mb-6 text-white">Opcje dostawy</h3>
             
             <div className="space-y-4">
-              <div className="flex items-start gap-4 p-4 bg-card rounded-xl">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Package className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <div className="font-semibold mb-1">InPost Paczkomat</div>
-                  <div className="text-sm text-foreground/70">Szybka i wygodna dostawa do wybranego paczkomatu</div>
+                  <div className="font-semibold mb-1 text-white">InPost Paczkomat</div>
+                  <div className="text-sm text-white/70">Szybka i wygodna dostawa do wybranego paczkomatu</div>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-card rounded-xl">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Truck className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <div className="font-semibold mb-1">Kurier (pobranie)</div>
-                  <div className="text-sm text-foreground/70">Dostawa kurierem z możliwością płatności przy odbiorze</div>
+                  <div className="font-semibold mb-1 text-white">Kurier (pobranie)</div>
+                  <div className="text-sm text-white/70">Dostawa kurierem z możliwością płatności przy odbiorze</div>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-card rounded-xl">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Users className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <div className="font-semibold mb-1">Odbiór osobisty</div>
-                  <div className="text-sm text-foreground/70">Odbierz zamówienie osobiście w Krakowie</div>
+                  <div className="font-semibold mb-1 text-white">Odbiór osobisty</div>
+                  <div className="text-sm text-white/70">Odbierz zamówienie osobiście w Krakowie</div>
                 </div>
               </div>
             </div>
@@ -122,8 +122,8 @@ const ContactSection = () => {
       </div>
 
       {/* Footer */}
-      <div className="container mx-auto px-4 lg:px-8 mt-20 pt-8 border-t border-border">
-        <div className="text-center text-sm text-foreground/60">
+      <div className="container mx-auto px-4 lg:px-8 mt-20 pt-8 border-t border-white/10">
+        <div className="text-center text-sm text-white/60">
           <p>© 2025 FAVMOTORS. Wszystkie prawa zastrzeżone.</p>
         </div>
       </div>

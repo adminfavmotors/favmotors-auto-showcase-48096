@@ -40,7 +40,7 @@ const OrderStepsSection = () => {
             return (
               <div
                 key={step.number}
-                className={`${step.bgColor} p-8 rounded-xl transition-smooth hover:scale-105 hover:shadow-elegant`}
+                className="bg-card p-8 rounded-xl transition-smooth hover:scale-105 hover:shadow-elegant border border-border"
               >
                 <div className="flex items-center justify-center w-16 h-16 mb-6 gradient-red rounded-full shadow-glow mx-auto">
                   <Icon className="w-8 h-8 text-white" />
@@ -48,8 +48,8 @@ const OrderStepsSection = () => {
                 
                 <div className="text-center">
                   <div className="text-sm font-semibold text-primary mb-2">KROK {step.number}</div>
-                  <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
-                  <p className="text-foreground/70 leading-relaxed">{step.description}</p>
+                  <h3 className="text-2xl font-bold mb-4 text-foreground">{step.title}</h3>
+                  <p className="text-foreground/80 leading-relaxed">{step.description}</p>
                 </div>
               </div>
             );
