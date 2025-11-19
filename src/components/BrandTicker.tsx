@@ -57,7 +57,7 @@ const BrandTicker = () => {
       
       <div 
         ref={scrollRef}
-        className="flex gap-12 overflow-hidden whitespace-nowrap"
+        className="flex gap-6 overflow-hidden whitespace-nowrap"
         style={{ 
           scrollBehavior: 'auto',
           WebkitOverflowScrolling: 'touch'
