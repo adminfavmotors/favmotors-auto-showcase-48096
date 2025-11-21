@@ -3,9 +3,9 @@ import { MapPin, Phone, Mail, Instagram, Facebook, Package, Truck, Users } from 
 // <!-- Sekcja Kontakt -->
 const ContactSection = () => {
   return (
-    <section id="kontakt" className="py-20 bg-secondary border-t border-white/10">
+    <section id="kontakt" className="py-12 lg:py-20 bg-secondary border-t border-white/10">
       <div className="container mx-auto px-4 lg:px-8">
-        <h2 className="text-4xl lg:text-5xl font-bold mb-12 text-center">
+        <h2 className="font-bold mb-8 lg:mb-12 text-center" style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}>
           <span className="text-primary">Kontakt</span> <span className="text-white">z nami</span>
         </h2>
 

@@ -3,7 +3,7 @@ import heroBg from '@/assets/hero-bg.jpg';
 // <!-- Sekcja O nas -->
 const HeroSection = () => {
   return (
-    <section id="o-nas" className="relative min-h-[500px] md:min-h-[600px] lg:min-h-[85vh] xl:min-h-[80vh] flex items-center pt-20 pb-8 lg:pb-12">
+    <section id="o-nas" className="relative min-h-[clamp(500px,80vh,700px)] lg:min-h-[clamp(600px,85vh,900px)] flex items-center pt-20 pb-8 lg:pb-12">
       {/* Background Image - not lazy loaded as it's above the fold */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -18,13 +18,13 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-3xl">
           {/* EDYTUJ: Tytuł sekcji O nas */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold mb-4 lg:mb-6 leading-tight">
+          <h2 className="font-display font-bold mb-4 lg:mb-6 leading-tight" style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)' }}>
             Profesjonalne części samochodowe
             <span className="text-primary"> w najlepszych cenach</span>
           </h2>
           
           {/* EDYTUJ: Opis firmy */}
-          <p className="text-lg md:text-xl lg:text-2xl text-foreground/80 mb-6 lg:mb-8 leading-relaxed">
+          <p className="text-foreground/80 mb-6 lg:mb-8 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2vw, 1.5rem)' }}>
             FAVMOTORS to zaufany partner w zakresie części zamiennych do wszystkich marek samochodów. 
             Oferujemy szeroki asortyment produktów najwyższej jakości, konkurencyjne ceny oraz 
             profesjonalną obsługę. Działamy na terenie całej Polski, zapewniając szybką dostawę 
