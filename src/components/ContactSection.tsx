@@ -34,8 +34,8 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <div className="font-semibold mb-1 text-white">Telefon</div>
-                    <a href="tel:+48123456789" className="text-white/80 hover:text-primary transition-fast">
-                      +48 123 456 789
+                    <a href="tel:+48788554887" className="text-white/80 hover:text-primary transition-fast">
+                      +48 788 554 887
                     </a>
                   </div>
                 </div>
@@ -47,8 +47,8 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <div className="font-semibold mb-1 text-white">E-mail</div>
-                    <a href="mailto:kontakt@favmotors.pl" className="text-white/80 hover:text-primary transition-fast">
-                      kontakt@favmotors.pl
+                    <a href="mailto:admin@favmotors.pl" className="text-white/80 hover:text-primary transition-fast">
+                      admin@favmotors.pl
                     </a>
                   </div>
                 </div>
@@ -61,7 +61,7 @@ const ContactSection = () => {
               <div className="flex gap-4">
                 {/* EDYTUJ: Link do Instagrama */}
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/favmotors.com_pl/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-500 rounded-xl flex items-center justify-center hover:scale-110 transition-smooth shadow-elegant"
@@ -71,7 +71,7 @@ const ContactSection = () => {
                 
                 {/* EDYTUJ: Link do Facebooka */}
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/profile.php?id=61563873141123"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center hover:scale-110 transition-smooth shadow-elegant"
