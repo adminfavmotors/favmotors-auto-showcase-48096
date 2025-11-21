@@ -2,21 +2,35 @@ import { useEffect, useRef } from 'react';
 
 const brands = [
   'Bosch',
-  'Valeo',
+  'Febi Bilstein',
   'Mann Filter',
   'Mahle',
-  'Castrol',
-  'Mobil',
-  'Total',
-  'Mannol',
-  'Febi Bilstein',
-  'Sachs',
-  'Ferodo',
-  'Brembo',
   'TRW',
   'SKF',
+  'Valeo',
+  'Brembo',
+  'ATE',
+  'Sachs',
+  'LUK',
+  'Contitech',
   'Gates',
-  'Dayco'
+  'Dayco',
+  'Filtron',
+  'Nissens',
+  'Denso',
+  'NGK',
+  'KYB',
+  'Monroe',
+  'Delphi',
+  'Hella',
+  'Castrol',
+  'Mobil',
+  'TotalEnergies',
+  'Ravenol',
+  'Liqui Moly',
+  'Shell',
+  'Motul',
+  'Varta'
 ];
 
 const BrandTicker = () => {
@@ -57,7 +71,7 @@ const BrandTicker = () => {
       
       <div 
         ref={scrollRef}
-        className="flex gap-6 overflow-hidden whitespace-nowrap"
+        className="flex gap-3 overflow-hidden whitespace-nowrap"
         style={{ 
           scrollBehavior: 'auto',
           WebkitOverflowScrolling: 'touch'
@@ -66,7 +80,7 @@ const BrandTicker = () => {
         {duplicatedBrands.map((brand, index) => (
           <div
             key={`${brand}-${index}`}
-            className="inline-flex items-center justify-center min-w-[200px] px-8"
+            className="inline-flex items-center justify-center min-w-[160px] px-6"
           >
             <span className="text-2xl font-display font-bold text-white/90 hover:text-primary transition-smooth">
               {brand}
