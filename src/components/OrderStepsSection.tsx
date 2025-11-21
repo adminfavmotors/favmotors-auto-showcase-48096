@@ -28,9 +28,9 @@ const OrderStepsSection = () => {
   ];
 
   return (
-    <section id="zamowienie" className="py-20 bg-background">
+    <section id="zamowienie" className="py-12 lg:py-20 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
-        <h2 className="text-4xl lg:text-5xl font-bold mb-12 text-center">
+        <h2 className="font-bold mb-8 lg:mb-12 text-center" style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}>
           Jak złożyć <span className="text-primary">zamówienie</span>
         </h2>
 

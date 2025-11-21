@@ -56,7 +56,7 @@ const FAQSection = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section id="faq" className="py-20 bg-muted/30">
+    <section id="faq" className="py-12 lg:py-20 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
         <Collapsible open={isOpen} onOpenChange={setIsOpen}>
           <div className="text-center mb-8">
@@ -64,7 +64,7 @@ const FAQSection = () => {
               <HelpCircle className="w-8 h-8 text-primary" />
             </div>
             <CollapsibleTrigger className="group">
-              <h2 className="text-4xl lg:text-5xl font-display font-bold text-foreground mb-4 flex items-center justify-center gap-3">
+              <h2 className="font-display font-bold text-foreground mb-4 flex items-center justify-center gap-3" style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}>
                 Najczęściej zadawane <span className="text-primary">pytania</span>
                 <ChevronDown className={`w-8 h-8 text-primary transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
               </h2>

@@ -135,10 +135,10 @@ const BlogSection = () => {
 
   return (
     <>
-      <section id="blog" className="py-20 bg-background">
+      <section id="blog" className="py-12 lg:py-20 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
+          <div className="text-center mb-8 lg:mb-12">
+            <h2 className="font-display font-bold text-foreground mb-4" style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}>
               Porady i <span className="text-primary">Artykuły</span>
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
