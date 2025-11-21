@@ -74,8 +74,11 @@ const ProductsSection = () => {
                 <div className="aspect-square overflow-hidden bg-muted">
                   <img
                     src={product.image}
-                    alt={product.name}
+                    alt={`${product.name} - części samochodowe FAVMOTORS`}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    width="256"
+                    height="256"
                   />
                 </div>
                 <div className="p-6">
