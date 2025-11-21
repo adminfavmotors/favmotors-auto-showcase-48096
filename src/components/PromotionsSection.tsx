@@ -69,8 +69,11 @@ const PromotionsSection = () => {
                 <div className="relative h-[400px] lg:h-[500px] cursor-pointer group">
                   <img
                     src={promo.image}
-                    alt={promo.title}
+                    alt={`${promo.title} - promocje FAVMOTORS`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                    loading="lazy"
+                    width="1200"
+                    height="500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/70 to-transparent flex items-end">
                     <div className="p-8 lg:p-12">

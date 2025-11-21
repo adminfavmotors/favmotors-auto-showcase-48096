@@ -4,10 +4,12 @@ import heroBg from '@/assets/hero-bg.jpg';
 const HeroSection = () => {
   return (
     <section id="o-nas" className="relative min-h-[600px] lg:min-h-screen flex items-center pt-20 pb-12">
-      {/* Background Image */}
+      {/* Background Image - not lazy loaded as it's above the fold */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg})` }}
+        role="img"
+        aria-label="Tło przedstawiające części samochodowe"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/60"></div>
       </div>
