@@ -14,7 +14,7 @@ const categoryData = {
     title: 'Oleje',
     description: 'Wysokiej jakości oleje silnikowe dla wszystkich typów silników. Oferujemy szeroki wybór olejów syntetycznych, półsyntetycznych i mineralnych od wiodących światowych producentów.',
     products: [
-      { id: 1, name: 'Castrol EDGE 5W-30', price: '189.99 zł', image: product1 },
+      { id: 1, name: 'Motule 5W30 8100 X-CLEAN EFE', price: '137,95 zł', image: product1 },
       { id: 2, name: 'Mobil 1 0W-40', price: '209.99 zł', image: product2 },
       { id: 3, name: 'Shell Helix Ultra 5W-40', price: '199.99 zł', image: product3 },
       { id: 4, name: 'Total Quartz 9000 5W-40', price: '179.99 zł', image: product4 },
