@@ -144,7 +144,7 @@ const CategoryPage = () => {
               {data.products.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-card rounded-xl overflow-hidden shadow-elegant hover:scale-105 transition-smooth"
+                  className="bg-card rounded-xl overflow-hidden shadow-elegant hover:scale-105 transition-smooth product-card-smooth"
                 >
                   <div className="aspect-square overflow-hidden bg-muted">
                     <img

@@ -95,7 +95,7 @@ const PopularProductsPage = () => {
             {products.map((product) => (
               <div
                 key={product.id}
-                className="flex-shrink-0 w-72 bg-card rounded-lg overflow-hidden shadow-elegant hover:shadow-glow transition-smooth hover:scale-105"
+                className="flex-shrink-0 w-72 bg-card rounded-lg overflow-hidden shadow-elegant hover:shadow-glow transition-smooth hover:scale-105 product-card-smooth"
               >
                 <div className="aspect-square overflow-hidden">
                   <img
