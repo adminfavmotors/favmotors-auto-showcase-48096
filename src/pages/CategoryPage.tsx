@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import ContactSection from '@/components/ContactSection';
 import { ArrowLeft } from 'lucide-react';
-import product1 from '@/assets/product-1.jpg';
+import product1 from '@/assets/motul5w30xcleanefe.jpg';
 import product2 from '@/assets/product-2.jpg';
 import product3 from '@/assets/product-3.jpg';
 import product4 from '@/assets/product-4.jpg';
