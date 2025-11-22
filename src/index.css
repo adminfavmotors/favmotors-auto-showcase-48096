@@ -123,4 +123,13 @@ All colors MUST be HSL.
   .transition-fast {
     transition: var(--transition-fast);
   }
+  
+  /* Product card hover optimization - prevents font weight flickering */
+  .product-card-smooth {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+  }
 }
