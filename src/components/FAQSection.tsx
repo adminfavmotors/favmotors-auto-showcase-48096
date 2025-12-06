@@ -4,13 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-import { HelpCircle, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { HelpCircle } from "lucide-react";
 
 interface FAQItem {
   question: string;
@@ -53,63 +47,57 @@ const faqs: FAQItem[] = [
 ];
 
 const FAQSection = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <section id="faq" className="py-12 lg:py-20 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
-        <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
-              <HelpCircle className="w-8 h-8 text-primary" />
-            </div>
-            <CollapsibleTrigger className="group">
-              <h2 className="font-display font-bold text-foreground mb-4 flex items-center justify-center gap-3" style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}>
-                Najczęściej zadawane <span className="text-primary">pytania</span>
-                <ChevronDown className={`w-8 h-8 text-primary transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
-              </h2>
-            </CollapsibleTrigger>
-            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Odpowiedzi na pytania, które najczęściej otrzymujemy od naszych klientów
-            </p>
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+            <HelpCircle className="w-8 h-8 text-primary" />
           </div>
+          <h2 
+            className="font-display font-bold text-foreground mb-4 stable-text"
+            style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}
+          >
+            Najczęściej zadawane <span className="text-primary">pytania</span>
+          </h2>
+          <p className="text-lg text-foreground/70 max-w-2xl mx-auto stable-text">
+            Odpowiedzi na pytania, które najczęściej otrzymujemy od naszych klientów
+          </p>
+        </div>
 
-          <CollapsibleContent className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
-            <div className="max-w-4xl mx-auto mt-8">
-              <Accordion type="single" collapsible className="space-y-4">
-                {faqs.map((faq, index) => (
-                  <AccordionItem 
-                    key={index} 
-                    value={`item-${index}`}
-                    className="bg-card border border-border rounded-lg px-6 shadow-sm hover:shadow-elegant transition-smooth"
-                  >
-                    <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary hover:no-underline py-5">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-foreground/80 pb-5 leading-relaxed">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
-
-            <div className="text-center mt-12">
-              <p className="text-foreground/70 mb-4">
-                Nie znalazłeś odpowiedzi na swoje pytanie?
-              </p>
-              <button
-                onClick={() => {
-                  const element = document.getElementById('kontakt');
-                  element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
-                className="px-8 py-3 gradient-primary text-white font-semibold rounded-lg shadow-glow hover:scale-105 transition-smooth"
+        <div className="max-w-4xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`}
+                className="bg-card border border-border rounded-lg px-6 shadow-sm hover:shadow-elegant transition-smooth gpu-fix"
               >
-                Skontaktuj się z nami
-              </button>
-            </div>
-          </CollapsibleContent>
-        </Collapsible>
+                <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary hover:no-underline py-5 font-stable">
+                  <span className="stable-text">{faq.question}</span>
+                </AccordionTrigger>
+                <AccordionContent className="text-foreground/80 pb-5 leading-relaxed stable-text">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+
+        <div className="text-center mt-12">
+          <p className="text-foreground/70 mb-4 stable-text">
+            Nie znalazłeś odpowiedzi na swoje pytanie?
+          </p>
+          <button
+            onClick={() => {
+              const element = document.getElementById('kontakt');
+              element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+            className="px-8 py-3 gradient-primary text-white font-semibold rounded-lg shadow-glow hover:scale-105 transition-smooth gpu-fix font-stable"
+          >
+            <span className="stable-text">Skontaktuj się z nami</span>
+          </button>
+        </div>
       </div>
     </section>
   );

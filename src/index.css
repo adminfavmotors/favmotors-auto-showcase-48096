@@ -55,19 +55,12 @@ All colors MUST be HSL.
     --transition-fast: all 0.25s ease-out;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -77,6 +70,7 @@ All colors MUST be HSL.
 }
 
 @layer base {
+  /* GLOBAL FONT STABILITY - UNIVERSAL FIX */
   *,
   *::before,
   *::after {
@@ -84,27 +78,42 @@ All colors MUST be HSL.
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
     text-rendering: optimizeLegibility !important;
+    text-shadow: 0 0 0 transparent;
   }
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', 'Inter', sans-serif;
   }
   
   html {
     scroll-behavior: smooth;
   }
   
-  /* Global transform stability for all interactive elements */
+  /* GLOBAL GPU LAYER PROMOTION - All interactive elements */
   button,
   a,
   [role="button"],
   .card,
-  .btn {
+  .btn,
+  nav button,
+  nav a,
+  article,
+  .accordion-trigger,
+  .collapsible-trigger {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     transform: translateZ(0);
     -webkit-transform: translate3d(0, 0, 0);
+    will-change: transform;
+  }
+  
+  /* Stabilize all text globally */
+  h1, h2, h3, h4, h5, h6,
+  p, span, a, button, label {
+    text-shadow: 0 0 0 transparent;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 }
 
@@ -153,9 +162,11 @@ All colors MUST be HSL.
   /* Stable text rendering during transforms */
   .stable-text {
     text-shadow: 0 0 0 currentColor;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
   
-  /* Universal font stability utility - apply to any hoverable element */
+  /* Universal font stability utility */
   .font-stable {
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
@@ -168,7 +179,7 @@ All colors MUST be HSL.
     will-change: transform;
   }
   
-  /* Product card hover optimization - extends font-stable */
+  /* Product card hover optimization */
   .product-card-smooth {
     will-change: transform;
     transform: translateZ(0);
@@ -191,7 +202,7 @@ All colors MUST be HSL.
     text-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
   
-  /* Hoverable elements stability - catches all Tailwind hover utilities */
+  /* UNIVERSAL HOVER STABILITY - Catches ALL Tailwind hover/transition utilities */
   .hover\:scale-105,
   .hover\:scale-102,
   .hover\:scale-103,
@@ -209,13 +220,34 @@ All colors MUST be HSL.
     -webkit-backface-visibility: hidden;
     transform-style: preserve-3d;
     will-change: transform;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
   }
   
   /* Stabilize all text inside hoverable/animated elements */
   [class*="hover:scale"] *,
   [class*="hover:translate"] *,
   [class*="hover:-translate"] *,
-  .group * {
+  [class*="transition"] *,
+  .group *,
+  article *,
+  .card * {
     text-shadow: 0 0 0 transparent;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+  }
+  
+  /* Brand ticker stability */
+  .brand-ticker-item {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  .brand-ticker-item span {
+    text-shadow: 0 0 0 transparent;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
   }
 }

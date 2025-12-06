@@ -138,10 +138,13 @@ const BlogSection = () => {
       <section id="blog" className="py-12 lg:py-20 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-8 lg:mb-12">
-            <h2 className="font-display font-bold text-foreground mb-4" style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}>
+            <h2 
+              className="font-display font-bold text-foreground mb-4 stable-text"
+              style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}
+            >
               Porady i <span className="text-primary">Artykuły</span>
             </h2>
-            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/70 max-w-2xl mx-auto stable-text">
               Praktyczne informacje o częściach samochodowych, poradniki i aktualności ze świata motoryzacji
             </p>
           </div>
@@ -150,10 +153,13 @@ const BlogSection = () => {
             {articles.map((article) => (
               <article
                 key={article.id}
-                className="bg-card rounded-lg overflow-hidden shadow-elegant hover:shadow-glow transition-smooth cursor-pointer border border-border"
+                className="bg-card rounded-lg overflow-hidden shadow-elegant hover:shadow-glow transition-smooth cursor-pointer border border-border gpu-fix product-card-smooth"
                 onClick={() => setSelectedArticle(article)}
               >
-                <div className="aspect-video bg-muted relative overflow-hidden">
+                <div 
+                  className="aspect-video bg-muted relative overflow-hidden"
+                  style={{ width: '100%', height: 'auto' }}
+                >
                   <div className="absolute inset-0 gradient-dark flex items-center justify-center">
                     <BookOpen className="w-12 h-12 text-white/60" />
                   </div>
@@ -169,14 +175,14 @@ const BlogSection = () => {
                       })}
                     </time>
                   </div>
-                  <h3 className="font-display font-semibold text-lg text-foreground mb-2 line-clamp-2">
+                  <h3 className="font-display font-semibold text-lg text-foreground mb-2 line-clamp-2 stable-text">
                     {article.title}
                   </h3>
-                  <p className="text-foreground/70 text-sm line-clamp-3">
+                  <p className="text-foreground/70 text-sm line-clamp-3 stable-text">
                     {article.excerpt}
                   </p>
                   <div className="mt-4">
-                    <span className="text-primary font-semibold text-sm hover:underline">
+                    <span className="text-primary font-semibold text-sm hover:underline stable-text">
                       Czytaj więcej →
                     </span>
                   </div>
@@ -188,11 +194,11 @@ const BlogSection = () => {
       </section>
 
       <Dialog open={!!selectedArticle} onOpenChange={() => setSelectedArticle(null)}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-card">
           {selectedArticle && (
             <>
               <DialogHeader>
-                <DialogTitle className="text-3xl font-display font-bold text-foreground pr-8">
+                <DialogTitle className="text-3xl font-display font-bold text-foreground pr-8 stable-text">
                   {selectedArticle.title}
                 </DialogTitle>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground mt-2">
@@ -208,7 +214,10 @@ const BlogSection = () => {
               </DialogHeader>
               
               <div className="mt-6">
-                <div className="aspect-video bg-muted rounded-lg mb-6 overflow-hidden">
+                <div 
+                  className="aspect-video bg-muted rounded-lg mb-6 overflow-hidden"
+                  style={{ width: '100%', height: 'auto' }}
+                >
                   <div className="w-full h-full gradient-dark flex items-center justify-center">
                     <BookOpen className="w-20 h-20 text-white/40" />
                   </div>
@@ -223,12 +232,12 @@ const BlogSection = () => {
                 />
 
                 <div className="mt-8 pt-6 border-t border-border">
-                  <p className="text-sm text-muted-foreground mb-2">Słowa kluczowe:</p>
+                  <p className="text-sm text-muted-foreground mb-2 stable-text">Słowa kluczowe:</p>
                   <div className="flex flex-wrap gap-2">
                     {selectedArticle.keywords.map((keyword, idx) => (
                       <span 
                         key={idx}
-                        className="px-3 py-1 bg-muted text-foreground text-sm rounded-full"
+                        className="px-3 py-1 bg-muted text-foreground text-sm rounded-full stable-text"
                       >
                         {keyword}
                       </span>
