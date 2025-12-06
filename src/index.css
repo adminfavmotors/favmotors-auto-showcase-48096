@@ -126,10 +126,27 @@ All colors MUST be HSL.
   
   /* Product card hover optimization - prevents font weight flickering */
   .product-card-smooth {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transform: translateZ(0);
+    /* GPU layer promotion for stable rendering */
     will-change: transform;
+    transform: translateZ(0);
+    -webkit-transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  /* Stabilize type rendering during transform - apply to card and all children */
+  .product-card-smooth,
+  .product-card-smooth * {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  /* Prevent subpixel rendering jumps on text elements */
+  .product-card-smooth h3,
+  .product-card-smooth p,
+  .product-card-smooth span {
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
 }
