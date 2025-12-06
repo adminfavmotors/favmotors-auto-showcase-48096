@@ -8,6 +8,7 @@ import product3 from '@/assets/product-3.jpg';
 import product4 from '@/assets/product-4.jpg';
 import product5 from '@/assets/product-5.jpg';
 import product6 from '@/assets/product-6.jpg';
+import product7 from '@/assets/k2roton05l.jpg';
 
 const categoryData = {
   oil: {
@@ -35,7 +36,7 @@ const categoryData = {
     title: 'Produkty do pielęgnacji samochodu',
     description: 'Profesjonalna kosmetyka samochodowa i chemia do pielęgnacji pojazdu. Szampony, woski, politury, środki czyszczące i powłoki ochronne dla nieskazitelnego wyglądu Twojego samochodu.',
     products: [
-      { id: 1, name: 'Szampon samochodowy koncentrat 1l', price: '39.99 zł', image: product1 },
+      { id: 1, name: 'Szampon samochodowy koncentrat 1l', price: '39.99 zł', image: product7 },
       { id: 2, name: 'Wosk do karoserii', price: '69.99 zł', image: product2 },
       { id: 3, name: 'Politura do plastiku', price: '29.99 zł', image: product3 },
       { id: 4, name: 'Płyn do szyb 500ml', price: '24.99 zł', image: product4 },
