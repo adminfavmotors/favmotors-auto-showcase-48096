@@ -77,11 +77,13 @@ All colors MUST be HSL.
 }
 
 @layer base {
-  * {
+  *,
+  *::before,
+  *::after {
     @apply border-border;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
   }
 
   body {
@@ -139,11 +141,25 @@ All colors MUST be HSL.
     transition: var(--transition-fast);
   }
   
+  /* GPU acceleration utility - apply to any animated element */
+  .gpu-fix {
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  /* Stable text rendering during transforms */
+  .stable-text {
+    text-shadow: 0 0 0 currentColor;
+  }
+  
   /* Universal font stability utility - apply to any hoverable element */
   .font-stable {
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
-    text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility !important;
     text-shadow: 0 0 0 transparent;
     transform: translateZ(0);
     -webkit-transform: translate3d(0, 0, 0);
@@ -165,7 +181,7 @@ All colors MUST be HSL.
   .product-card-smooth * {
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
-    text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility !important;
     -webkit-text-size-adjust: 100%;
   }
   
@@ -175,16 +191,31 @@ All colors MUST be HSL.
     text-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
   
-  /* Hoverable elements stability */
+  /* Hoverable elements stability - catches all Tailwind hover utilities */
   .hover\:scale-105,
   .hover\:scale-102,
+  .hover\:scale-103,
+  .hover\:scale-110,
   .hover\:-translate-y-1,
   .hover\:-translate-y-2,
   .group:hover .group-hover\:scale-105,
+  .group:hover .group-hover\:scale-110,
   [class*="hover:scale"],
-  [class*="hover:translate"] {
+  [class*="hover:translate"],
+  [class*="hover:-translate"],
+  [class*="transition"],
+  [class*="animate-"] {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     transform-style: preserve-3d;
+    will-change: transform;
+  }
+  
+  /* Stabilize all text inside hoverable/animated elements */
+  [class*="hover:scale"] *,
+  [class*="hover:translate"] *,
+  [class*="hover:-translate"] *,
+  .group * {
+    text-shadow: 0 0 0 transparent;
   }
 }
