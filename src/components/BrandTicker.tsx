@@ -2,35 +2,35 @@ import { useEffect, useRef } from 'react';
 
 const brands = [
   'Bosch',
-  'Febi Bilstein',
-  'SKF',
   'Mann Filter',
   'Mahle',
-  'Castrol',
-  'Mobil',
-  'Motul',
   'Valeo',
-  'TRW',
+  'Denso',
   'Brembo',
+  'ATE',
+  'TRW',
+  'Febi Bilstein',
   'Sachs',
   'Lemförder',
-  'INA',
-  'Gates',
-  'Dayco',
+  'Hengst',
+  'Filtron',
   'NGK',
-  'Denso',
-  'Textar',
-  'ATE',
+  'Delphi',
+  'Gates',
   'Continental',
-  'Ferodo',
-  'TotalEnergies',
-  'Shell',
-  'Petronas',
-  'Hella',
-  'Philips',
+  'INA',
+  'SKF',
+  'Monroe',
+  'KYB',
+  'Castrol',
+  'Mobil',
+  'Total',
   'Liqui Moly',
-  'K&N',
-  'Hengst'
+  'ELF',
+  'Shell',
+  'Champion',
+  'Hella',
+  'Nissens',
 ];
 
 const BrandTicker = () => {
@@ -62,16 +62,16 @@ const BrandTicker = () => {
   const duplicatedBrands = [...brands, ...brands, ...brands];
 
   return (
-    <section className="py-12 bg-secondary overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-8 mb-6">
-        <p className="text-center text-white/70 text-sm font-semibold tracking-wider uppercase">
+    <section className="py-10 lg:py-12 bg-secondary overflow-hidden">
+      <div className="container mx-auto px-4 lg:px-8 mb-5">
+        <p className="text-center text-white/70 text-sm font-semibold tracking-wider uppercase stable-text">
           Współpracujemy z najlepszymi markami
         </p>
       </div>
       
       <div 
         ref={scrollRef}
-        className="flex gap-3 overflow-hidden whitespace-nowrap"
+        className="flex gap-1 overflow-hidden whitespace-nowrap gpu-fix"
         style={{ 
           scrollBehavior: 'auto',
           WebkitOverflowScrolling: 'touch'
@@ -80,9 +80,9 @@ const BrandTicker = () => {
         {duplicatedBrands.map((brand, index) => (
           <div
             key={`${brand}-${index}`}
-            className="inline-flex items-center justify-center min-w-[160px] px-6"
+            className="brand-ticker-item inline-flex items-center justify-center min-w-[100px] sm:min-w-[120px] px-3 sm:px-4"
           >
-            <span className="text-2xl font-display font-bold text-white/90 hover:text-primary transition-smooth">
+            <span className="text-lg sm:text-xl lg:text-2xl font-display font-bold text-white/90 hover:text-primary transition-smooth stable-text">
               {brand}
             </span>
           </div>

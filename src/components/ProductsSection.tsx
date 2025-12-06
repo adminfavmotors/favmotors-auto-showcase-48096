@@ -7,8 +7,6 @@ import product4 from '@/assets/product-4.jpg';
 import product5 from '@/assets/product-5.jpg';
 import product6 from '@/assets/product-6.jpg';
 
-// <!-- Sekcja Nasze propozycje -->
-// EDYTUJ: Dodaj lub edytuj produkty poniżej
 const products = [
   { id: 1, name: 'Klocki hamulcowe', price: '149.99 zł', image: product1 },
   { id: 2, name: 'Filtr powietrza', price: '79.99 zł', image: product2 },
@@ -38,9 +36,12 @@ const ProductsSection = () => {
   };
 
   return (
-    <section id="propozycje" className="py-20 gradient-dark">
+    <section id="propozycje" className="py-16 lg:py-20 gradient-dark">
       <div className="container mx-auto px-4 lg:px-8">
-        <h2 className="text-4xl lg:text-5xl font-bold mb-12 text-center text-white">
+        <h2 
+          className="font-bold mb-10 lg:mb-12 text-center text-white stable-text"
+          style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}
+        >
           Nasze <span className="text-primary">propozycje</span>
         </h2>
 
@@ -48,30 +49,35 @@ const ProductsSection = () => {
           {/* Navigation buttons */}
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center transition-smooth shadow-elegant"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center transition-smooth shadow-elegant gpu-fix"
+            aria-label="Przewiń w lewo"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-6 h-6 text-white" />
           </button>
           
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center transition-smooth shadow-elegant"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center transition-smooth shadow-elegant gpu-fix"
+            aria-label="Przewiń w prawo"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-6 h-6 text-white" />
           </button>
 
           {/* Product carousel */}
           <div
             ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-12"
+            className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-12 gpu-fix"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {products.map((product) => (
               <div
                 key={product.id}
-                className="flex-shrink-0 w-64 bg-card rounded-xl overflow-hidden shadow-elegant hover:scale-105 transition-smooth product-card-smooth"
+                className="flex-shrink-0 w-64 bg-card rounded-xl overflow-hidden shadow-elegant hover:scale-105 transition-smooth product-card-smooth gpu-fix"
               >
-                <div className="aspect-square overflow-hidden bg-muted">
+                <div 
+                  className="aspect-square overflow-hidden bg-muted"
+                  style={{ width: '256px', height: '256px' }}
+                >
                   <img
                     src={product.image}
                     alt={`${product.name} - części samochodowe FAVMOTORS`}
@@ -82,8 +88,8 @@ const ProductsSection = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
-                  <p className="text-2xl font-bold text-primary">{product.price}</p>
+                  <h3 className="text-lg font-semibold mb-2 stable-text">{product.name}</h3>
+                  <p className="text-2xl font-bold text-primary stable-text">{product.price}</p>
                 </div>
               </div>
             ))}
